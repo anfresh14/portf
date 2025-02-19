@@ -664,7 +664,7 @@ border-radius: 20px;
         transition: 0.5s;
     }
 }
-@media (max-width: 600px) {
+@media (max-width: 650px) {
 
     .navper{
         margin-top: 2em !important;
