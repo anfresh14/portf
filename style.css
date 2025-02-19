@@ -27,10 +27,7 @@ h2,h1,li,h3{
         cursor: pointer;
         transition: transform 0.3s ease, opacity 0.3s ease, top 0.5s ease;
         animation:  entrada-li 0.4s cubic-bezier(0.16, 0.02, 0.73, 0.98);
-
 }
-
-
 .arrow img{
     width: 30px;
 }
@@ -42,11 +39,10 @@ h2,h1,li,h3{
     color: red; /* Cambia el color del texto del botón cuando esté expandido */
   }
  .dynamic-color {
-    background-color: red !important; 
     transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out !important; 
 }
 .dynamic-color:hover {
-    box-shadow: 0 0 20px 5px red !important;
+    box-shadow: 0 0 20px 3px red;
     transition: background-color 0.3s, box-shadow 0.3s !important; 
 }
 .color-btn {
@@ -282,7 +278,7 @@ nav ul div li:hover{
 }
 .proyecto{
     background-color: #1e1e1e2f;
-    width: 147px;
+    width: 260px;
     height: 160px;
     border-radius: 10px;
     padding: 0.9em;
@@ -319,6 +315,7 @@ nav ul div li:hover{
 }
 
 #habilidades ul{
+    padding: 0;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -664,7 +661,7 @@ border-radius: 20px;
         transition: 0.5s;
     }
 }
-@media (max-width: 650px) {
+@media (max-width: 600px) {
 
     .navper{
         margin-top: 2em !important;
@@ -672,12 +669,28 @@ border-radius: 20px;
         height: 90px;
 
     }
+    .informacion{
+        width: 72%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #perfilm img{
+        display: none;
+    }
+    #perfilm{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
     #los{
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin: 0 0 0 0;
+        margin: 0 ;
+        padding: 0;
     }
     #los div{
         display: flex;
@@ -694,6 +707,12 @@ border-radius: 20px;
     #perfilm {
         padding-top: 2em;
     }
+    #proyectos h2{
+        justify-content: center;
+        text-align: center;
+    }
+
+
     #selection {
         justify-content: center;
         flex-direction: column; /* Cambiar a columna */
@@ -712,4 +731,5 @@ border-radius: 20px;
         font-size: 16px;
         padding: 12px;
     }
+
 }
