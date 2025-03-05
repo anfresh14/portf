@@ -56,7 +56,7 @@ h2,h1,li,h3{
     top: 10px;
     gap: 10px;    
     width: 100%;
-    z-index: 1;    
+    z-index: 4;    
     display: flex;    
     position: fixed;
     align-items: center;
@@ -530,6 +530,228 @@ div img, video{
 .right-arrow {
     right: 5px;
 }
+
+/*Fotos*/
+.fotos {
+    display: flex;
+    justify-content: center;
+}
+
+.blod {
+    font-weight: bold;
+    background-color: #0c0c0c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+}
+
+.popup {
+    background-color: #131313e7;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: end;
+    width: 100%;
+    height: 100vh;
+}
+
+#closeBtn {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.flotan-fotos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+.flotan-fotos div button {
+    color: white;
+    background-color: #0c0c0c;
+    padding: 0.4em;
+    border-radius: 15px;
+    border: 2px solid transparent;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.flotan-fotos div button:hover {
+    border-color: transparent;
+    transform: translateY(-8px) scale(1.1); 
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); 
+}
+
+.flotan-fotos div button:hover::before {
+    animation: borderAnimation 2s infinite; 
+}
+
+.flotan-fotos div button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    border: 2px solid transparent;
+
+}
+
+.popup-content {
+    width: 100%;
+    height: 100vh;
+    color: white;
+    display: none;
+    overflow: hidden;
+    overflow: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #131313;
+    padding: 30px;
+    border-radius: 10px;
+    position: fixed;    
+    z-index: 3;
+}
+
+.popup-inner {
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+
+}
+
+.close-btn {
+    background-color: #0f0f0f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    position: fixed;
+    border: solid white 1px;
+
+    z-index: 5;
+}
+
+
+@keyframes borderAnimation {
+    0% {
+        border-color: purple;
+    }
+    20% {
+        border-color: red;
+    }
+    40% {
+        border-color: yellow;
+    }
+    60% {
+        border-color: white;
+    }
+    80% {
+        border-color: green;
+    }
+    100% {
+        border-color: blue;
+    }
+}
+
+.flotan-fotos button {
+    animation: floatEffect 3s ease-in-out infinite;
+}
+
+.floatEffect-2{
+    animation: floatEffect-2 3s ease-in-out infinite !important;
+}
+
+@keyframes floatEffect {
+    0% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(-5px) scale(1.05);
+    }
+    100% {
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes floatEffect-2 {
+    0% {
+        transform: translateY(5px) scale(1.05);
+    }
+    50% {
+        transform: translateY(0) scale(1);
+    }
+    100% {
+        transform: translateY(5px) scale(1.05);    }
+}
+
+.card-4 {
+    position: relative;
+    width: 260px;
+    height: 400px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+  }
+  
+  .card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .card-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to bottom,#1e1e1e00 , #131313 35px);
+        color: white;
+    padding: 20px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+  }
+  
+  .card-4:hover .card-image {
+    transform: scale(1.1); /* Aumenta el tamaño de la imagen */
+  }
+  
+  .card-4:hover .card-info {
+    transform: translateY(0); /* Muestra la información al pasar el cursor */
+  }
+  
+
+
+
 
 /*webs*/
 h1{
