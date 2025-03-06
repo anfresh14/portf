@@ -163,117 +163,31 @@
             </ul>
         </div>   
     </section>
-    <section>
-        <h1 id="fotografia">Composiciones</h1>
-        <section id="selection">
-            <a href="javascript:void(0)" onclick="moveDiv(0)">
-                <div class="destacados1">
-                    <div class="sombrac dynamic-color">
-                        <video src="img/destacados/productof.mp4" autoplay loop muted></video>
-                    </div>
-                    <h3>Productos</h3>
-                    <p>Descripción breve del proyecto, incluyendo herramientas utilizadas y tu rol.</p>
-                    <button class="move-btn dynamic-color">Mover</button>
-                </div>
-            </a>
-            <a href="javascript:void(0)" onclick="moveDiv(1)">
-                <div class="destacados1">
-                    <div class="sombrac dynamic-color">
-                        <video src=""></video>
-                    </div>
-                    <h3>animaciones</h3>
-                    <p>Descripción breve del proyecto, incluyendo herramientas utilizadas y tu rol.</p>
-                    <button class="move-btn dynamic-color">Mover</button>
-                </div>
-            </a>
-            <a href="javascript:void(0)" onclick="moveDiv(2)">
-                <div class="destacados1">
-                    <div class="sombrac dynamic-color">
-                        <video src="img/destacados/procesos.mp4" autoplay loop muted></video>
-                    </div>
-                    <h3>Procesos</h3>
-                    <p>Descripción breve del proyecto, incluyendo herramientas utilizadas y tu rol.</p>
-                    <button class="move-btn dynamic-color">Mover</button>
-                </div>
-            </a>
-            <a href="javascript:void(0)" onclick="moveDiv(3)">
-                <div class="destacados1">
-                    <div class="sombrac dynamic-color">
-                        <video src="img/destacados/mep.mp4" autoplay loop muted></video>
-                    </div>
-                    <h3>ME</h3>
-                    <p>Descripción breve del proyecto, incluyendo herramientas utilizadas y tu rol.</p>
-                    <button class="move-btn dynamic-color">Mover</button>
-                </div>
-            </a>
-            <!-- Div extra para cada uno -->
-            <div id="extraDiv0" class="extraDiv">
-                <button href="javascript:void(0)" onclick="moveDiv(0)" class="move-btn btn-extradiv dynamic-color"><div class="btn-extradiv-1">&#10095;</div></button>
-                <h3>Detalles Adicionales - Productos</h3>
-                <p>Contenido adicional del proyecto "Productos".</p>
-                <div class="carousel">
-                    <img src="img/destacados/producto1.jpg" alt="">
-                    <img src="img/destacados/producto2.jpg" alt="">
-                    <img src="img/destacados/producto3.jpg" alt="">
-                </div>
-                <button class="carousel-arrow left-arrow" onclick="moveVideo(-1, 0)">&#10094;</button>
-                <button class="carousel-arrow right-arrow" onclick="moveVideo(1, 0)">&#10095;</button>
-            </div>
-            <div id="extraDiv1" class="extraDiv ">
-                <button href="javascript:void(0)" onclick="moveDiv(1)" class="move-btn btn-extradiv dynamic-color"><div class="btn-extradiv-1">&#10095;</div></button>
-                <h3>Detalles Adicionales - animaciones</h3>
-                <p>Contenido adicional del proyecto "animaciones".</p>
-                <div class="carousel">
-                    <video class="dynamic-color" src="img/destacados/videos - animaciones/logo, tarea.mp4" autoplay loop controls  ></video>
-                    <video class="dynamic-color"  src="img/destacados/videos - animaciones/adidas 1.mp4"autoplay loop controls></video>
-                    <video class="dynamic-color" src="img/destacados/videos - animaciones/bumper carton.mp4" autoplay loop controls></video>
-                    <video class="dynamic-color" src="img/destacados/videos - animaciones/cuadro animado.mp4"autoplay loop controls></video>
-                    <video class="dynamic-color" src="img/destacados/videos - animaciones/letering_1.mp4"autoplay loop controls></video>
-                </div>
-                <button class="carousel-arrow right-arrow" onclick="moveVideo(1, 1)">&#10095;</button>                
-                <button class="carousel-arrow left-arrow" onclick="moveVideo(-1, 1)">&#10094</button>
-            </div>
-            <div id="extraDiv2" class="extraDiv">
-                <button href="javascript:void(0)" onclick="moveDiv(2)" class="move-btn btn-extradiv dynamic-color"><div class="btn-extradiv-1">&#10095;</div></button>
-                <h3>Detalles Adicionales - Procesos</h3>
-                <p>Contenido adicional del proyecto "Procesos".</p>
-                <div class="carousel">
-                    <img src="img/destacados/proceso1.jpg" alt="">
-                    <img src="img/destacados/proceso2.jpg" alt="">
-                    <img src="img/destacados/proceso3.jpg" alt="">
-                </div>
-                <button class="carousel-arrow right-arrow" onclick="moveVideo(1, 2)">&#10095;</button>|
-                <button class="carousel-arrow left-arrow" onclick="moveVideo(-1, 2)">&#10094;</button>
-            </div>
-            <div id="extraDiv3" class="extraDiv">
-                <button href="javascript:void(0)" onclick="moveDiv(3)" class="move-btn btn-extradiv dynamic-color"><div class="btn-extradiv-1">&#10095;</div></button>
-                <h3>Detalles Adicionales - ME</h3>;
-                <p>Contenido adicional del proyecto "ME".</p>
-                <div class="carousel">
-                    <img src="img/destacados/mep1.jpg" alt="">
-                    <img src="img/destacados/mep2.jpg" alt="">
-                    <img src="img/destacados/mep3.jpg" alt="">
-                </div>
-                <button class="carousel-arrow left-arrow" onclick="moveVideo(-1, 3)">&#10094;</button>
-                <button class="carousel-arrow right-arrow" onclick="moveVideo(1, 3)">&#10095;</button>
-            </div>
-        </section> 
 
-        <section class="fotos">
-            <button id="openBtn" class="blod dynamic-color">fotografias</button>
+
+        <section class="fotos" id="fotografia">
         
             <div id="overlay" class="overlay">
                 <div class="popup">
-                    <button id="closeBtn">Cerrar</button>
                     <div class="flotan-fotos">
-                        <div><button class=" floatEffect-2" data-category="Paisajes">Paisajes</button></div>
-                        <div><button class="" data-category="Cafes">Cafes</button></div>
-                        <div><button class=" floatEffect-2" data-category="Gatos">Gatos</button></div>
-                        <div><button class="" data-category="Plantas">Plantas</button></div>
-                        <div><button class=" floatEffect-2" data-category="Calle">Calle</button></div>
+                        <div><button class=" floatEffect-2" data-category="Paisajes">Paisajes 🌄</button></div>
+                        <div><button class="" data-category="Cafes"> 🌸 Aromas</button></div>
+                        <div><button class=" floatEffect-2" data-category="Gatos">🐾 Felinos </button></div>
+                        <div><button class="" data-category="Plantas"> Plantas 🌿</button></div>
+                        <div><button class=" floatEffect-2" data-category="Calle">Calle 🛣️</button></div>
                         <div><button class="" data-category="Billar">Billar</button></div>
-                        <div><button class=" floatEffect-2" data-category="Perros">Perros</button></div>
+                        <div><button class=" floatEffect-2" data-category="Perros">🐶 Canino </button></div>
                         <div><button class="" data-category="Libros">Libros</button></div>
+                        <div><button class="" data-category="Libros">Libros</button></div>
+                        <div><button class="" data-category="Libros">Libros</button></div>
+                        <div><button class="" data-category="Libros">Libros</button></div>
+                        <div><button class="" data-category="Libros">Libros</button></div>
+                        <div><button class="" data-category="Libros">Libros</button></div>
+                        <div><button class="" data-category="Libros">Libros</button></div>
+                        <div><button class="" data-category="Libros">Libros</button></div>
+                        <div><button class="" data-category="Libros">Libros</button></div>
+                        <div><button class="" data-category="Libros">Libros</button></div>
+
                     </div>
                 </div>
             </div>
@@ -556,121 +470,33 @@
         <p>&copy; 2024 Andres Gonzalez. Todos los derechos reservados.</p>
     </footer>
     <script>
-let isMoved = [false, false, false, false]; // Array para manejar el estado de cada div
-function moveDiv(index) {
-    const divs = document.querySelectorAll('.destacados1');
-    const extraDiv = document.getElementById(`extraDiv${index}`); 
-    // Si el div ya ha sido movido, volvemos todo a su estado original
-    if (isMoved[index]) {
-        // Volver todos los divs a su estado inicial
-        divs.forEach((div) => {
-            div.style.display = 'flex';
-            div.classList.remove('moved');
-        });
-        // Ocultar el div extra correspondiente
-        extraDiv.style.display = 'none';
-        // Cambiar el estado de isMoved
-        isMoved[index] = false;
-    } else {
-        // Si no ha sido movido, proceder con el movimiento
-        // Ocultar todos los divs menos el seleccionado
-        divs.forEach((div, i) => {
-            if (i !== index) {
-                div.style.display = 'none';
-            }
-        });
-        // Mover el div seleccionado
-        const selectedDiv = divs[index];
-        selectedDiv.classList.add('moved');
-        // Mostrar el div extra correspondiente
-        extraDiv.style.display = 'block';
-        // Cambiar el estado de isMoved
-        isMoved[index] = true;
-    }
-}
-// Función para mover los videos en el carrusel
-function moveVideo(direction, index) {
-    const carousel = document.getElementById(`extraDiv${index}`).querySelector('.carousel');
-    const totalVideos = carousel.children.length;
-    const currentTransform = parseInt(getComputedStyle(carousel).transform.split(',')[4]) || 0;
-    const videoWidth = carousel.children[0].clientWidth;
-    const moveDistance = videoWidth * direction;
-    // Desplazar el carrusel
-    const newTransform = currentTransform + moveDistance;
-    const maxShift = -videoWidth * (totalVideos - 1);
-    // Restringir el desplazamiento
-    if (newTransform <= 0 && newTransform >= maxShift) {
-        carousel.style.transform = `translateX(${newTransform}px)`;
-    }
-}
-// Función para mover las imágenes en el carrusel
-function moveImage(direction, index) {
-    const carousel = document.getElementById(`extraDiv${index}`).querySelector('.carousel');
-    const totalImages = carousel.children.length;
-    const currentTransform = parseInt(getComputedStyle(carousel).transform.split(',')[4]) || 0;
-    const imageWidth = carousel.children[0].clientWidth;  // Se obtiene el ancho de la imagen en lugar de video
-    const moveDistance = imageWidth * direction;
-    // Desplazar el carrusel
-    const newTransform = currentTransform + moveDistance;
-    const maxShift = -imageWidth * (totalImages - 1);  // El desplazamiento máximo se ajusta según el número de imágenes
-    // Restringir el desplazamiento
-    if (newTransform <= 0 && newTransform >= maxShift) {
-        carousel.style.transform = `translateX(${newTransform}px)`;  // Se aplica la transformación en el eje X
-    }
-}
+            const buttons = document.querySelectorAll('.flotan-fotos button');
+            const closeBtns = document.querySelectorAll('.close-btn'); // Todos los botones de cierre
 
+            // Mostrar la ventana emergente principal
+            buttons.forEach(button => {
+            button.addEventListener('click', () => {
+            const category = button.getAttribute('data-category'); // Obtén el valor del data-category
+            const popup = document.getElementById(`popup${category}`); // Selecciona el popup correspondiente
+
+        if (popup) {
+            popup.style.display = 'block'; // Muestra la ventana emergente
+                }
+            });
+        });
+
+        // Cerrar ventanas emergentes específicas
+        closeBtns.forEach(btn => {
+            btn.addEventListener('click', (event) => {
+                const popup = event.target.closest('.popup-content'); // Selecciona el contenedor más cercano de la clase "popup-content"
+                if (popup) {
+                    popup.style.display = 'none'; // Cierra la ventana emergente
+                }
+            });
+        });
 
     </script>
     <script>
-const openBtn = document.getElementById('openBtn');
-const closeBtn = document.getElementById('closeBtn');
-const overlay = document.getElementById('overlay');
-const closeBtns = document.querySelectorAll('.close-btn'); // Todos los botones de cierre
-
-// Mostrar la ventana emergente principal
-openBtn.addEventListener('click', () => {
-    overlay.style.display = 'flex';
-    setTimeout(() => {
-        overlay.style.opacity = 1;
-    }, 10); // Espera breve para asegurar que se ve el efecto
-});
-
-// Cerrar la ventana emergente principal
-closeBtn.addEventListener('click', () => {
-    overlay.style.opacity = 0;
-    setTimeout(() => {
-        overlay.style.display = 'none';
-    }, 300); // Tiempo para que se vea el desvanecimiento
-});
-
-// Función para mostrar una ventana emergente específica
-const buttons = document.querySelectorAll('.flotan-fotos button');
-
-buttons.forEach(button => {
-    button.addEventListener('click', () => {
-        const category = button.getAttribute('data-category');
-        const popup = document.getElementById(`popup${category}`);
-        
-        if (popup) {
-            popup.style.display = 'block';
-        }
-    });
-});
-
-// Cerrar ventanas emergentes específicas
-closeBtns.forEach(btn => {
-    btn.addEventListener('click', (event) => {
-        const popup = event.target.closest('.popup-content');
-        if (popup) {
-            popup.style.display = 'none';
-        }
-    });
-});
-
-
-
-    </script>
-<script>
     function changeColor(color) {
         // Seleccionar todos los elementos con la clase 'dynamic-color'
         document.querySelectorAll('.dynamic-color').forEach(element => {
