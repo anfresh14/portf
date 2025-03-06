@@ -573,9 +573,10 @@ div img, video{
 }
 
 #closeBtn {
-    background-color: #f44336;
+    width: 80px;
+    height: 38px;   
+    background-color: #0e0e0e;
     color: white;
-    border: none;
     border-radius: 5px;
     margin-top: 20px;
 }
@@ -583,6 +584,7 @@ div img, video{
 .flotan-fotos {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 1em;
 }
 
@@ -630,7 +632,6 @@ div img, video{
     transform: translate(-50%, -50%);
     background-color: #131313;
     padding: 30px;
-    border-radius: 10px;
     position: fixed;    
     z-index: 3;
 }
@@ -638,7 +639,7 @@ div img, video{
 .popup-inner {
 
     display: flex;
-    align-items: center;
+    align-items: start;
     flex-direction: column;
 
 
@@ -735,16 +736,14 @@ div img, video{
     left: 0;
     right: 0;
     background: linear-gradient(to bottom,#1e1e1e00 , #131313 35px);
-        color: white;
+    color: white;
     padding: 20px;
     transform: translateY(100%);
     transition: transform 0.3s ease;
   }
-  
   .card-4:hover .card-image {
     transform: scale(1.1); /* Aumenta el tamaño de la imagen */
   }
-  
   .card-4:hover .card-info {
     transform: translateY(0); /* Muestra la información al pasar el cursor */
   }
