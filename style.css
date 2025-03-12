@@ -104,6 +104,7 @@ h2,h1,li,h3{
     left: 89%;    
     width: 73px;
     height: 73px;
+    z-index: 1;
     rotate: 90deg;
     display: flex;
     position: fixed;
@@ -162,7 +163,18 @@ nav ul div li:hover{
     
     transition-duration: 0.4s;
 }
+
+@keyframes animation-fondo {
+
+    0%{background-position-y: 0;}
+    100%{background-position-y: 1000px;}
+    
+}
     #los{
+        animation: animation-fondo   200s ;
+
+        background: linear-gradient( #1e1e1e, black , #1e1e1e );
+
         display: flex;
         justify-content: space-between;  
         div{
@@ -218,6 +230,7 @@ nav ul div li:hover{
     color: white;
     display: flex;
     align-items: center;
+    padding: 1em;
     img{
         width: 40%;
         pointer-events: none;
@@ -400,7 +413,6 @@ nav ul div li:hover{
     height: 100%;
     background-color: rgba(0, 0, 0, 0.7);
     transition: opacity 0.3s ease;
-    z-index: 2;
 }
 
 .popup {
@@ -743,12 +755,14 @@ border-radius: 20px;
     }}
     
     .navper{
-        margin-top: 2em !important;
+        margin-top: 1em !important;
         width: 90px;
         height: 90px;
         
 
     }
+
+
     .informacion{
         width: 72%;
         display: flex;
@@ -766,6 +780,7 @@ border-radius: 20px;
     }
 
     #los{
+
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -778,7 +793,7 @@ border-radius: 20px;
         align-items: center;    
     }
     #los div li{
-        margin: 2em;
+        margin: 1em;
         list-style-type: none;
     }
     #los div img{
