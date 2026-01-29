@@ -295,9 +295,11 @@ h2 {
   position: relative;
   min-height: 100vh;
   background-color: #d9d9d9;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
   z-index: 1;
 }
+
 
 .editorial-bg::after {
   content: "";
@@ -942,3 +944,71 @@ nav {
   background: none;
   cursor: pointer;
 }
+
+
+/* =========================================================
+   REDES · EXTENSIÓN EDITORIAL
+   Color · Presencia · Ritmo
+   ========================================================= */
+
+.redes-editorial {
+  gap: 80px;
+}
+
+/* Manifiesto */
+.redes-manifesto h2 {
+  color: #8b0000;
+}
+
+.red-note {
+  margin-top: 2em;
+  font-size: 12px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+
+/* Cards sociales */
+.social-card {
+  border-top: 1px solid #8b0000;
+  position: relative;
+}
+
+.social-card::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #8b0000;
+  transition: width 0.4s ease;
+}
+
+.social-card:hover::after {
+  width: 100%;
+}
+
+.social-card h2 {
+  color: #111;
+  transition: color 0.3s ease;
+}
+
+.social-card:hover h2 {
+  color: #8b0000;
+}
+
+.social-handle {
+  display: inline-block;
+  margin-top: 1em;
+  font-size: 11px;
+  letter-spacing: 0.35em;
+  opacity: 0.5;
+}
+
+/* Numeración editorial más agresiva */
+.social-card::before {
+  opacity: 0.05;
+  color: #8b0000;
+}
+

@@ -52,24 +52,20 @@ window.addEventListener("click", (e) => {
 /* ===============================
    TRANSICIÓN ENTRE PÁGINAS
 ================================ */
-document.querySelectorAll("a[href]").forEach(link => {
-  link.addEventListener("click", e => {
-    const url = link.getAttribute("href");
-
-    if (
-      url.startsWith("#") ||
-      link.target === "_blank" ||
-      url.startsWith("http")
-    ) return;
-
-    e.preventDefault();
-    document.body.classList.add("page-exit");
-
-    setTimeout(() => {
-      window.location.href = url;
-    }, 400);
-  });
+window.addEventListener("load", () => {
+  const scrollY = sessionStorage.getItem("scrollY");
+  if (scrollY) {
+    window.scrollTo(0, parseInt(scrollY));
+  }
 });
+
+window.addEventListener("load", () => {
+  const scrollY = sessionStorage.getItem("scrollY");
+  if (scrollY) {
+    window.scrollTo(0, parseInt(scrollY));
+  }
+});
+
 
 /* ===============================
    PINTEREST PANEL LATERAL (AISLADO)
