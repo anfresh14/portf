@@ -1,0 +1,944 @@
+/* coding: utf-8 */
+
+/* =========================================================
+   CAPÍTULO I · SISTEMA BASE
+   Reset · Terreno neutro · Comportamiento global
+   ========================================================= */
+
+html {
+  scroll-behavior: smooth !important;
+}
+
+body {
+  background-color: #D9D9D9 !important;
+  overscroll-behavior: none;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   CAPÍTULO II · TIPOGRAFÍA EDITORIAL
+   Jerarquía · Familia · Presentación
+   ========================================================= */
+
+@font-face {
+  font-family: PLAYFAI;
+  src: url(FONT2/PlayfairDisplay-VariableFont_wght.ttf);
+}
+
+h1, p, h2 {
+  font-family: PLAYFAI;
+}
+
+/* Primera definición tipográfica (numérica/editorial) */
+h1 {
+    margin: 1rem 0 1rem 2rem;
+  font-size: 9vmin;
+  font-weight: 700;
+}
+
+/* Nota editorial: los elementos sobre el fondo deben quedar sobre el grano */
+.editorial-bg > * {
+  position: relative;
+  z-index: 10;
+}
+
+
+/* =========================================================
+   CAPÍTULO III · BLOQUE SCSS EXPERIMENTAL (NO BORRAR)
+   Sintaxis no compilada · Referencia · Maquetación
+   ========================================================= */
+
+nav {
+  DIV {
+    display: flex;
+    justify-content: end;
+    padding-inline: 40PX;
+    padding-top: 20PX;
+
+    BUTTON {
+      margin-inline: 20PX;
+      border-style: none;
+      color: rgb(0, 0, 0);
+      background-color: rgba(250, 235, 215, 0);
+
+      h2 {
+        font-size: 17px;
+      }
+    }
+  }
+}
+
+
+/* =========================================================
+   CAPÍTULO IV · SISTEMA DE NAVEGACIÓN
+   Interacción · Movimiento · Línea Editorial
+   ========================================================= */
+
+.nav-btn {
+  text-decoration: none;
+  color: black;
+  background-color: transparent;
+  margin-inline: 20px;
+  position: relative;
+  transition:
+    transform 0.35s cubic-bezier(.2,.8,.2,1),
+    letter-spacing 0.35s ease,
+    opacity 0.35s ease;
+}
+
+.nav-btn h2 {
+  font-size: 17px;
+  letter-spacing: 0.12em;
+}
+
+/* Efecto editorial: botón flotante */
+.nav-btn:hover {
+  transform: translateY(-6px);
+  opacity: 0.85;
+}
+
+/* Línea editorial bajo navegación */
+.nav-btn::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 1px;
+  background-color: black;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s ease;
+}
+
+.nav-btn:hover::after {
+  transform: scaleX(1);
+}
+
+
+/* =========================================================
+   CAPÍTULO V · PRESENTACIÓN DEL AUTOR
+   Hero · Dirección Visual · Identidad
+   ========================================================= */
+
+.NOMBRE {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15em 0;
+  min-height: 70vh;
+  animation: fadeUp 0.5s ease forwards;
+}
+
+/* Lateral editorial */
+.side-editorial {
+  position: absolute;
+  left: 20px;
+  bottom: 40%;
+  transform: rotate(-90deg);
+  font-size: 11px;
+  font-weight: 300;
+  letter-spacing: 0.35em;
+  opacity: 0.4;
+}
+
+/* Statement autoral */
+.manifesto {
+  text-align: center;
+  margin-top: -6em;
+  font-size: 12px;
+  letter-spacing: 0.25em;
+  opacity: 0.45;
+}
+
+/* Firma / cuenta */
+.INSTA {
+  display: flex;
+  align-items: end;
+  justify-content: end;
+  padding-inline: 58PX;
+  padding-top: 6em;
+}
+
+/* =========================================================
+   CAPÍTULO VI · TÍTULO VARIANTE (OVERRIDE)
+   Notas: se respeta tu override original
+   ========================================================= */
+
+
+/* =========================================================
+   CAPÍTULO VII · EFECTOS DE MÁQUINA (Typewriter)
+   Identidad IA · Animación Editorial
+   ========================================================= */
+
+@keyframes typing {
+  0.0000%, 27.3488% { content: ""; }
+  1.1395%, 26.2093% { content: "A"; }
+  2.2791%, 25.0698% { content: "AD"; }
+  3.4186%, 23.9302% { content: "ADR"; }
+  4.5581%, 22.7907% { content: "ANDRE"; }
+  5.6977%, 21.6512% { content: "ANDRES"; }
+  6.8372%, 20.5116% { content: "ANDRES_"; }
+  7.9767%, 19.3721% { content: "ANDRES_G"; }
+  9.1163%, 18.2326% { content: "ANDRES_GO"; }
+  10.2558%, 17.0930% { content: "ANDRES_GON"; }
+
+  30.7674%, 51.2791% { content: ""; }
+  31.9070%, 50.1395% { content: "w"; }
+  33.0465%, 49.0000% { content: "wr"; }
+  34.1860%, 47.8605% { content: "wri"; }
+  35.3256%, 46.7209% { content: "writ"; }
+  36.4651%, 45.5814% { content: "write"; }
+  37.6047%, 44.4419% { content: "writer"; }
+
+  54.6977%, 75.2093% { content: ""; }
+  55.8372%, 74.0698% { content: "r"; }
+  56.9767%, 72.9302% { content: "re"; }
+  58.1163%, 71.7907% { content: "rea"; }
+  59.2558%, 70.6512% { content: "read"; }
+  60.3953%, 69.5116% { content: "reade"; }
+  61.5349%, 68.3721% { content: "reader"; }
+
+  78.6279%, 96.8605% { content: ""; }
+  79.7674%, 95.7209% { content: "h"; }
+  80.9070%, 94.5814% { content: "hu"; }
+  82.0465%, 93.4419% { content: "hum"; }
+  83.1860%, 92.3023% { content: "huma"; }
+  84.3256%, 91.1628% { content: "human"; }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.typewriter {
+  --caret: currentcolor;
+}
+
+.typewriter::before {
+  content: "";
+  animation: typing 13.5s infinite;
+}
+
+.typewriter::after {
+  content: "";
+  border-right: 1px solid var(--caret);
+  animation: blink 0.5s linear infinite;
+}
+
+.typewriter.thick::after {
+  border-right: 1ch solid var(--caret);
+}
+
+.typewriter.nocaret::after {
+  border-right: 0;
+}
+
+@media (prefers-reduced-motion) {
+  .typewriter::after {
+    animation: none;
+  }
+
+  .typewriter::before {
+    content: "developer";
+    animation: sequencePopup 12s linear infinite;
+  }
+}
+
+
+/* =========================================================
+   CAPÍTULO VIII · MÁSCARAS / VISUALES
+   Recortes · Tratamiento de imagen · Editorial Visual
+   ========================================================= */
+
+.mask-text {
+  font-size: 120px;
+  background-image: url("IMG2/BANNERS/CHICA_BUSO\ NARANJA_BANNER_1.png");
+  background-size: cover;
+  background-position: center;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.mask-text-SOBRE_MI {
+  font-size: 120px;
+  background-image: url("IMG2/BANNERS/CHICA_BUSO NARANJA_BANNER_1.png");
+  background-size: cover;
+  background-position: 20em 20em;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* refuerzo tipográfico */
+h2 {
+  font-family: PLAYFAI;
+}
+
+
+/* =========================================================
+   CAPÍTULO IX · LIENZO EDITORIAL
+   Fondo · Contenedor · Grano · Materia
+   ========================================================= */
+
+.editorial-bg {
+  position: relative;
+  min-height: 100vh;
+  background-color: #d9d9d9;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.editorial-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 5; /* 👈 visible */
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      rgba(0,0,0,0.15) 0,
+      rgba(0,0,0,0.15) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+  background-position: var(--noise-x, 0px) var(--noise-y, 0px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.editorial-bg:hover::after {
+  opacity: 0.10;
+}
+
+
+/* =========================================================
+   CAPÍTULO X · CAPÍTULO DE PROYECTOS
+   Grid editorial · Jerarquía tipográfica · Recorridos
+   ========================================================= */
+
+.proyectos-page {
+  padding: 5em 3em;
+}
+
+.editorial-header h1 {
+  font-size: 8vmin;
+  letter-spacing: 0.15em;
+    color: rgba(0, 0, 0, 0.785);
+}
+
+.editorial-header p {
+  opacity: 0.6;
+  margin-top: 10px;
+  padding-left: 1.5em;
+}
+
+.grid-editorial {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 60px;
+  padding: 5em;
+    counter-reset: projCounter;
+}
+
+.editorial-card {
+  position: relative;
+  cursor: pointer;
+  border-top: 1px solid black;
+  padding-top: 25px;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  color: black;
+  text-decoration: none ;
+}
+
+
+.editorial-card:hover {
+  transform: translateY(-10px);
+  opacity: 0.9;
+}
+
+.editorial-card p {
+  max-width: 90%;
+  line-height: 1.6;
+  opacity: 0.7;
+}
+
+.editorial-card .tag {
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  opacity: 0.5;
+
+}
+
+.editorial-card h2 {
+  font-size: 22px;
+  margin: 15px 0;
+}
+
+.editorial-footer {
+  margin-top: 8em;
+  text-align: right;
+  opacity: 0.4;
+  font-size: 12px;
+}
+
+/* Sistema numérico editorial */
+.editorial-card {
+  counter-increment: projCounter;
+}
+
+
+
+.editorial-card::before {
+  content: counter(projCounter, decimal-leading-zero);
+  position: absolute;
+  top: -40px;
+  right: 0;
+  font-size: 120px;
+  font-weight: 700;
+  opacity: 0.03;
+  pointer-events: none;
+}
+.editorial-card div{
+  display: flex;
+}
+.editorial-card div img {
+  margin-bottom: 1em;
+  width: 80%;
+  filter: grayscale(100%);
+  transition: filter 0.4s ease, transform 0.4s ease;
+}
+
+.editorial-card:hover img {
+  filter: grayscale(0%);
+  transform: scale(1.03);
+}
+
+.banner{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+@keyframes MOD {
+  0.0000%, 27.3488% { content: ""; }
+  1.1395%, 26.2093% { content: "M"; }
+  2.2791%, 25.0698% { content: "MO"; }
+  3.4186%, 23.9302% { content: "MOD"; }
+  4.5581%, 22.7907% { content: "MODE"; }
+  5.6977%, 21.6512% { content: "MODEL"; }
+  6.8372%, 20.5116% { content: "MODELO"; }
+  7.9767%, 19.3721% { content: "MODELO_"; }
+  9.1163%, 18.2326% { content: "MODELO_"; }
+  10.2558%, 17.0930% { content: "MODELO_"; }
+
+  30.7674%, 51.2791% { content: "_"; }
+  31.9070%, 50.1395% { content: "_G"; }
+  33.0465%, 49.0000% { content: "_GE"; }
+  34.1860%, 47.8605% { content: "_GENE"; }
+  35.3256%, 46.7209% { content: "_GENERA"; }
+  36.4651%, 45.5814% { content: "_GENERAD"; }
+  37.6047%, 44.4419% { content: "_GENERADO"; }
+
+  54.6977%, 75.2093% { content: ""; }
+  55.8372%, 74.0698% { content: "_"; }
+  56.9767%, 72.9302% { content: "M"; }
+  58.1163%, 71.7907% { content: "MO"; }
+  59.2558%, 70.6512% { content: "MOD"; }
+  60.3953%, 69.5116% { content: "MODE"; }
+  61.5349%, 68.3721% { content: "MODELO"; }
+
+  78.6279%, 96.8605% { content: ""; }
+  79.7674%, 95.7209% { content: "h"; }
+  80.9070%, 94.5814% { content: "hu"; }
+  82.0465%, 93.4419% { content: "hum"; }
+  83.1860%, 92.3023% { content: "huma"; }
+  84.3256%, 91.1628% { content: "human"; }
+}
+
+@keyframes MODS {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.typew {
+  --caret: currentcolor;
+}
+
+.typew::before {
+  content: "";
+  animation: MOD 13.5s infinite;
+}
+
+.typew::after {
+  content: "";
+  border-right: 1px solid var(--caret);
+  animation: blink 0.5s linear infinite;
+}
+
+.typew.thick::after {
+  border-right: 1ch solid var(--caret);
+}
+
+.typew.nocaret::after {
+  border-right: 0;
+}
+
+@media (prefers-reduced-motion) {
+  .typew::after {
+    animation: none;
+  }
+
+  .typew::before {
+    content: "developer";
+    animation: sequencePopup 12s linear infinite;
+  }
+}
+
+/* =========================================================
+   CAPÍTULO XI · VISOR DE PROYECTOS (MODAL)
+   Sistema · Navegación · Cierre
+   ========================================================= */
+
+.editorial-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(4px);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background: #d9d9d9;
+  padding: 3em;
+  max-width: 900px;
+  width: 90%;
+  position: relative;
+  animation: fadeUp 0.4s ease;
+}
+
+.modal-content img {
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   CAPÍTULO XII · CINEMÁTICA EDITORIAL
+   Movimientos · Transiciones · Gestualidad
+   ========================================================= */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================================================
+   CAPÍTULO XV · ELEMENTOS EDITORIALES AUXILIARES
+   Divisores · Issue number · Material impreso
+   ========================================================= */
+
+.editorial-divider {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 2em 4em;
+  opacity: 0.6;
+}
+
+.issue-number {
+  position: absolute;
+  top: 120px;
+  left: 60px;
+  font-size: 12px;
+  letter-spacing: 0.3em;
+  opacity: 0.4;
+  z-index: 1;
+}
+
+.editorial-divider::before,
+.editorial-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background-color: black;
+}
+
+.editorial-divider span {
+  font-size: 11px;
+  letter-spacing: 0.3em;
+}
+
+
+/* =========================================================
+   CAPÍTULO XVI · BLOQUE LEGACY / DUPLICADOS (NO ELIMINAR)
+   Se preservan duplicados, overrides y experimentos
+   ========================================================= */
+
+
+/* =========================================================
+   CAPÍTULO XVII · RESPONSIVE / MEDIA QUERIES
+   Adaptabilidad · Mobile editorial · Jerarquías
+   ========================================================= */
+
+/* Tu CSS original no incluía media queries específicas
+   más allá del prefers-reduced-motion
+   Se deja preparado para escalado editorial */
+
+/*
+@media (max-width: 768px) {
+  .grid-editorial { gap: 30px; }
+}
+*/
+
+
+/* =========================================================
+   CAPÍTULO XVIII · ESPACIO EXPERIMENTAL (SCSS / CONCEPTOS)
+   Área sandbox · No compilado · Referencias de diseño
+   ========================================================= */
+
+nav {
+  DIV {
+    BUTTON {
+      h2 {
+        font-size: 17px;
+      }
+    }
+  }
+}
+
+/* =========================================================
+   TRANSICIONES ENTRE PÁGINAS
+   Editorial · Cinemática · Fluidez
+   ========================================================= */
+
+
+.page-exit {
+  animation: pageExit 0.4s ease forwards;
+}
+
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pageExit {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+
+
+/* =========================================================
+   FIN DEL DOCUMENTO · STYLE2.CSS EDITORIAL · NO BORRAR
+   ========================================================= */
+/* =========================================================
+   SOBRE MI · ARTÍCULO EDITORIAL
+   Manifiesto · Columnas · Ritmo visual
+   ========================================================= */
+
+.about-editorial {
+  padding-inline: 6em;
+  grid-template-columns: 2fr 1fr;
+  align-items: start;
+}
+
+/* Texto principal */
+.about-main p {
+  max-width: 620px;
+  line-height: 1.9;
+  font-size: 15px;
+  opacity: 0.75;
+  margin-bottom: 1.6em;
+}
+
+/* Frase de apertura */
+.about-main .lead {
+  font-size: 18px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+/* Cita editorial */
+.about-main .quote {
+  margin-top: 3em;
+  font-size: 13px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  opacity: 0.4;
+  border-left: 1px solid black;
+  padding-left: 20px;
+}
+
+/* Columna lateral */
+.about-meta { 
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+}
+
+/* Bloques laterales */
+.meta-block {
+  margin-bottom: 3em;
+}
+
+.meta-title {
+    font-size: 10px;
+    letter-spacing: 0.45em;
+    text-transform: uppercase;
+    opacity: 0.4;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.meta-block p {
+  font-size: 13px;
+  line-height: 1.6;
+  opacity: 0.7;
+}
+
+/* Responsive editorial */
+@media (max-width: 900px) {
+  .about-editorial {
+    grid-template-columns: 1fr;
+  }
+
+  .about-meta {
+    margin-top: 4em;
+    border-top: 1px solid black;
+    padding-top: 3em;
+  }
+}
+.about-editorial::before {
+  content: "01";
+  position: absolute;
+  top: 120px;
+  right: 60px;
+  font-size: 180px;
+  font-weight: 700;
+  opacity: 0.03;
+  pointer-events: none;
+}
+.about-header {
+  position: relative;
+  padding: 6em 2em 2em;
+}
+
+.section-label {
+  position: absolute;
+  top: 40px;
+  left: 60px;
+  font-size: 11px;
+  letter-spacing: 0.4em;
+  opacity: 0.4;
+}
+
+.about-header h1 {
+  line-height: 0.9;
+}
+.about-main p:first-of-type::first-letter {
+  font-size: 70px;
+  font-weight: 700;
+  float: left;
+  line-height: 0.9;
+  margin-right: 10px;
+  opacity: 0.8;
+}
+.about-main {
+  position: relative;
+}
+
+.about-main::before {
+  content: "";
+  position: absolute;
+  left: -40px;
+  top: 0;
+  width: 1px;
+  height: 80%;
+  background-color: black;
+  opacity: 0.15;
+}
+.meta-title {
+  font-size: 10px;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  opacity: 0.4;
+}
+
+
+
+
+/* GRID */
+.pantone-grid {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+/* TARJETA */
+.pantone-card {
+  background: rgb(73, 65, 65);
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform .3s ease, box-shadow .3s ease;
+  box-shadow: 0 10px 25px rgba(0,0,0,.08);
+}
+
+.pantone-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,.15);
+}
+
+/* IMAGEN */
+.image-wrapper {
+  width: 100%;
+  height: 260px; /* 🔒 tamaño fijo */
+  overflow: hidden;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .4s ease;
+}
+
+.pantone-card:hover img {
+  transform: scale(1.1);
+}
+
+/* INFO */
+.pantone-info {
+  padding: 20px;
+  text-align: center;
+}
+
+.year {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+
+
+
+.masonry {
+  column-count: 3;
+  column-gap: 20px;
+  padding: 20px;
+}
+
+.pin {
+  break-inside: avoid;
+  margin-bottom: 20px;
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.pin img {
+  width: 100%;
+  display: block;
+}
+
+.pin-action {
+  position: absolute;
+  top: -40px;
+  right: 10px;
+  border: none;
+  background: white;
+  padding: 8px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: top .25s ease;
+}
+
+.pin:hover .pin-action {
+  top: 10px;
+}
+
+/* PANEL */
+.side-panel {
+  position: fixed;
+  top: 0;
+  right: -360px;
+  width: 340px;
+  height: 100%;
+  background: white;
+  box-shadow: -10px 0 30px rgba(0,0,0,.2);
+  transition: right .35s ease;
+  padding: 20px;
+  z-index: 10;
+}
+
+.side-panel.open {
+  right: 0;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.4);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s ease;
+}
+
+.overlay.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.close-panel {
+  font-size: 26px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
