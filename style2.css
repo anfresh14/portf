@@ -15,7 +15,6 @@ body {
   margin: 0;
   padding: 0;
 }
-
 * {
   margin: 0;
   padding: 0;
@@ -122,6 +121,11 @@ nav {
 .nav-btn:hover::after {
   transform: scaleX(1);
 }
+
+#habilidades div{
+  padding-inline: 4em;
+}
+
 
 
 /* =========================================================
@@ -509,6 +513,26 @@ h2 {
   }
 }
 
+.IA{
+  background-color: #fbffe436;
+  padding: 1EM;
+  margin: 1EM;
+  display: flex;
+  justify-content: center;
+}
+.IA a{
+  padding-inline: 1EM;
+  text-decoration: none;
+
+}
+.IA a h3{
+  color: #111111a0;
+
+
+  
+}
+
+
 /* =========================================================
    CAPÍTULO XI · VISOR DE PROYECTOS (MODAL)
    Sistema · Navegación · Cierre
@@ -870,7 +894,7 @@ nav {
 .masonry {
   column-count: 3;
   column-gap: 20px;
-  padding: 20px;
+  padding: 40px;
 }
 
 .pin {
@@ -882,6 +906,11 @@ nav {
 }
 
 .pin img {
+  width: 100%;
+  display: block;
+}
+
+.pin video {
   width: 100%;
   display: block;
 }
@@ -1063,3 +1092,26 @@ nav {
     letter-spacing: 0.25em;
   }
 }
+
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .skill-item {
+            padding: 1.5rem;
+            border: 1px solid var(--border);
+        }
+
+        .skill-title {
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-desc {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
