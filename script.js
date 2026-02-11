@@ -105,3 +105,101 @@ if (masonry && panel && overlay && content && closeBtn) {
   closeBtn.addEventListener("click", closePanel);
 }
 
+
+document.addEventListener("DOMContentLoaded", () => {
+  const trigger = document.querySelector('.material-trigger');
+  const body = document.body;
+
+  if (!trigger) return;
+
+  let locked = false;
+
+  trigger.addEventListener('mouseenter', () => {
+    if (!locked) body.classList.add('material-active');
+  });
+
+  trigger.addEventListener('mouseleave', () => {
+    if (!locked) body.classList.remove('material-active');
+  });
+
+  trigger.addEventListener('click', () => {
+    locked = !locked;
+    body.classList.toggle('material-active', locked);
+  });
+});
+
+
+
+  const sections = document.querySelectorAll('.section');
+  const links = document.querySelectorAll('.menu a');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      if (scrollY >= sectionTop - 200) {
+        current = section.getAttribute('id');
+      }
+    });
+
+    links.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === `#${current}`) {
+        link.classList.add('active');
+      }
+    });
+  });
+
+
+  const modal = document.getElementById("modal");
+const modalContent = document.getElementById("modalContent");
+
+document.querySelectorAll(".pin").forEach(pin => {
+  pin.addEventListener("click", () => {
+    const img = pin.querySelector("img");
+    const desc = pin.dataset.desc || "";
+
+    modalContent.innerHTML = `
+      ${img.outerHTML}
+      <div class="modal-body">
+        <p>${desc}</p>
+      </div>
+    `;
+
+    modal.classList.add("active");
+  });
+});
+
+modal.addEventListener("click", e => {
+  if (e.target === modal) {
+    modal.classList.remove("active");
+  }
+});
+
+
+document.querySelectorAll(".pin").forEach(pin => {
+  pin.addEventListener("click", () => {
+    const img = pin.querySelector("img").src;
+    const desc = pin.dataset.desc || "";
+    const link = pin.dataset.link;
+    const icon = pin.dataset.icon;
+
+    modalContent.innerHTML = `
+      <img src="${img}">
+
+      <div class="modal-body">
+        <p>${desc}</p>
+
+        ${link && icon ? `
+          <a href="${link}" target="_blank" class="modal-link-icon">
+            <img src="${icon}" alt="link icon">
+            <span>Ver proyecto</span>
+          </a>
+        ` : ""}
+      </div>
+    `;
+
+    modal.classList.add("active");
+  });
+});
