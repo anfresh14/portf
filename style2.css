@@ -286,7 +286,7 @@ nav {
 
 .mask-text {
   font-size: 120px;
-  background-image: url("IMG2/BANNERS/CHICA_BUSO\ NARANJA_BANNER_1.png");
+  background-image: url("IMG2/BANNERS/CHICA_BUSO\ NARANJA_BANNER_1.jpg");
   background-size: cover;
   background-position: center;
   color: transparent;
@@ -296,7 +296,7 @@ nav {
 
 .mask-text-SOBRE_MI {
   font-size: 120px;
-  background-image: url("IMG2/BANNERS/CHICA_BUSO NARANJA_BANNER_1.png");
+  background-image: url("IMG2/BANNERS/CHICA_BUSO\ NARANJA_BANNER_1.jpg");
   background-size: cover;
   background-position: 20em 20em;
   color: transparent;
@@ -809,6 +809,17 @@ nav {
   .about-editorial {
     grid-template-columns: 1fr;
   }
+    #habilidades{
+    display: flex;
+    flex-direction: column;
+    padding-inline: 5em;
+  }
+
+  .editorial-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
   .about-meta {
     margin-top: 4em;
@@ -1045,16 +1056,35 @@ nav {
     gap: 30px;
   }
   .editorial-divider {
-  padding: 3em 4em;
+  padding: 1em 4em;
   opacity: 0.6;
 }
 .NOMBRE{
-      min-height: 5vh;
+      min-height: 74vh;
 }
 .NOMBRE h1{
     font-size: 150%;
 
   font-size: 8vmin;
+}
+
+  .about-editorial {
+    grid-template-columns: 1fr;
+    padding-inline: 2em;
+  }
+  .imagenes{
+    grid-template-columns: repeat(2, 1fr);
+  }
+  #habilidades{
+    display: flex;
+    flex-direction: column;
+    padding-inline: 3em;
+  }
+  .editorial-header {
+    padding-inline: 3em;
+}
+.grid-editorial {
+    padding-inline: 8em;
 }
 .mask-text{
   font-size: 150%;
@@ -1062,16 +1092,13 @@ nav {
 .side-editorial {
     left: -124px;
 }
-  /* Ocultar items secundarios */
-  .hide-mobile {
-    display: none;
-  }
-  /* Ajuste tipográfico */
-  .nav-btn h2 {
-    font-size: 14px;
-    letter-spacing: 0.25em;
-  }
+
+.about-header{
+    padding: 7em 2em 5em;
+
 }
+  }
+
 
 
         /* Skills */
