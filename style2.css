@@ -954,12 +954,14 @@ nav {
   break-inside: avoid;
   margin-bottom: 20px;
   position: relative;
-  border-radius: 16px;
+  border-radius: 30px;
 }
 
 .pin img {
   width: 100%;
   display: block;
+    border-radius: 30px;
+
 }
 
 .pin video {
@@ -1372,8 +1374,17 @@ html {
     transform: translateY(0) scale(1);
   }
 }
-
-
+ .carruceles_01{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 89px;
+ }
+#PELUCHES{
+  display: flex;
+  justify-content: center;
+      gap: 18em
+}
 .pins,
 .grid,
 .container {
@@ -1424,4 +1435,120 @@ html {
   opacity: 1;
   transform: translateY(-2px);
   color: #fff;
+}
+.insta-carousel {
+  padding: 4em 0;
+  overflow: hidden;
+    width: 524px;
+    height: 906px;
+  }
+
+.carousel-header {
+  padding-left: 3em;
+  margin-bottom: 2em;
+}
+
+.carousel-header h2 {
+  font-size: 20px;
+  letter-spacing: 0.2em;
+}
+
+/* WRAPPER */
+.carousel-wrapper {
+  position: relative;
+}
+
+/* TRACK */
+.carousel-track {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 20px 60px;
+
+  scroll-behavior: smooth;
+}
+
+/* OCULTAR SCROLL */
+.carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+/* ITEM */
+.carousel-item {
+    min-width: 507px;
+height: 678px;
+  flex-shrink: 0;
+  scroll-snap-align: center;
+
+  overflow: hidden;
+  border-radius: 16px;
+
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+/* IMAGEN */
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  transition:
+    transform 0.6s ease,
+        filter 0.6s ease;
+
+}
+
+/* HOVER ESTILO EDITORIAL */
+.carousel-item:hover img {
+  transform: scale(1.08);
+  filter: grayscale(0%);
+}
+
+/* BOTONES */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+
+  border: none;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  font-size: 22px;
+
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.carousel-btn:hover {
+  transform: translateY(-50%) scale(1.1);
+  background: black;
+}
+
+.carousel-btn.prev {
+  left: 10px;
+}
+
+.carousel-btn.next {
+  right: 10px;
+}
+.carousel-item video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  transition: 
+    transform 0.6s ease,
+    filter 0.6s ease;
+}
+
+/* HOVER */
+.carousel-item:hover video {
+  transform: scale(1.08);
+  filter: grayscale(0%);
 }

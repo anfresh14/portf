@@ -203,3 +203,28 @@ document.querySelectorAll(".pin").forEach(pin => {
     modal.classList.add("active");
   });
 });
+document.querySelectorAll('.carousel-wrapper').forEach(wrapper => {
+
+  const track = wrapper.querySelector('.carousel-track');
+  const nextBtn = wrapper.querySelector('.carousel-btn.next');
+  const prevBtn = wrapper.querySelector('.carousel-btn.prev');
+
+  if (!track || !nextBtn || !prevBtn) return;
+
+  const scrollAmount = track.clientWidth * 0.8;
+
+  nextBtn.addEventListener('click', () => {
+    track.scrollBy({
+      left: scrollAmount,
+      behavior: 'smooth'
+    });
+  });
+
+  prevBtn.addEventListener('click', () => {
+    track.scrollBy({
+      left: -scrollAmount,
+      behavior: 'smooth'
+    });
+  });
+
+});
