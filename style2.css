@@ -826,6 +826,13 @@ nav {
     border-top: 1px solid black;
     padding-top: 3em;
   }
+
+
+.about-main{
+
+}
+
+
 }
 .about-editorial::before {
   content: "01";
@@ -1086,7 +1093,7 @@ nav {
     padding-inline: 3em;
 }
 .grid-editorial {
-    padding-inline: 8em;
+    padding-inline: 3em;
 }
 .mask-text{
   font-size: 150%;
@@ -1096,8 +1103,21 @@ nav {
 }
 
 .about-header{
-    padding: 7em 2em 5em;
+    padding: 7em 2em 0em;
 
+}
+.VISTA-PREVIA{
+  min-height: 65vh;
+}
+.quote{
+    min-height: 40vh;
+
+}
+.section-title{
+  font-size: 50px;
+}
+#habilidades div{
+  padding-inline: 2em;
 }
   }
 
@@ -1245,8 +1265,7 @@ html {
   left: 0;
   width: 220px;
   height: 100vh;
-  background: #0f0f0f;
-  color: #fff;
+background-image: url(IMG2/42.png);  color: #fff;
   padding: 2rem 1.5rem;
   box-sizing: border-box;
   z-index: 100;
