@@ -828,11 +828,6 @@ nav {
   }
 
 
-.about-main{
-
-}
-
-
 }
 .about-editorial::before {
   content: "01";
@@ -948,8 +943,6 @@ nav {
 }
 
 
-
-
 .masonry {
   column-count: 5;
   column-gap: 20px;
@@ -975,12 +968,6 @@ nav {
   width: 100%;
   display: block;
 }
-
-
-
-
-
-
 
 
 
@@ -1566,8 +1553,84 @@ height: 678px;
     filter 0.6s ease;
 }
 
+
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3 , 1fr);
+    gap: 20px;
+}
+    
+.div1 {
+    grid-column: span 1 / span 2;
+    grid-row: span 2 / span 2;
+    grid-column-start: 1;
+    grid-row-start: 2;
+}
+
+.div2 {
+    grid-row: span 1 / span 1;
+    grid-column-start: 3;
+    grid-row-start: 2;
+}
+
+.div3 {
+
+    grid-row: span 1 / span 1;
+    grid-column-start: 4;
+    grid-row-start: 2;
+}
+
+.div4 {
+    grid-column: span 3 / span 4;
+    grid-row: span 1 / span 1;
+    grid-column-start: 3;
+    grid-row-start: 1;
+}
+
+.div5 {
+    grid-row: span 1 / span 1;
+    grid-column-start: 1;
+    grid-row-start: 1;
+}
+
+.div6 {
+    grid-row: span 1 / span 1;
+    grid-column-start: 2;
+    grid-row-start: 1;
+}
+
+.div7 {
+    grid-column: span 3 / span 4;
+    grid-row: span 1 / span 1;
+    grid-column-start: 3;
+    grid-row-start: 3;
+}
+        
+
+
+
+
 /* HOVER */
 .carousel-item:hover video {
   transform: scale(1.08);
   filter: grayscale(0%);
+}
+.totografia_alfa{
+  display: flex;
+}
+
+.fotografia_main{
+  margin-inline: 4em;
+  margin-left: 300px;
+
+}
+.fotografia{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fotografia img{
+  width: 100%;
 }
