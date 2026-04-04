@@ -412,6 +412,7 @@ h2 {
   display: flex;
 }
 .editorial-card div img {
+  height: 470px;
   margin-bottom: 1em;
   width: 80%;
   filter: grayscale(100%);
