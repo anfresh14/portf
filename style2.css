@@ -133,6 +133,8 @@ nav {
   transform: scaleX(1);
 }
 #habilidades{
+  margin-top: 3em;
+  margin-bottom: 1em;
   padding-inline: 5.24em;
   min-height: 60vh;
   display: flex;
@@ -811,6 +813,7 @@ nav {
     grid-template-columns: 1fr;
   }
     #habilidades{
+    
     display: flex;
     flex-direction: column;
     padding-inline: 5em;
@@ -1634,4 +1637,35 @@ height: 678px;
 }
 .fotografia img{
   width: 100%;
+}
+.fotografia video{
+  width: 100%;
+}
+.video-background {
+    margin-left: 20vh;
+    position: relative;
+    width: 89%;
+    height: 57vh;
+    overflow: hidden;
+    margin-top: 7em;
+}
+
+.video-background video {
+  filter: brightness(53%) contrast(94%) saturate(42%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: cover; /* recorta el video para que se ajuste */
+  z-index: -1; /* lo manda detrás del contenido */
+}
+
+.contenido {
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: center;
+  padding-top: 23vh;
 }
