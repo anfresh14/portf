@@ -948,9 +948,27 @@ nav {
 
 
 .masonry {
-  column-count: 5;
   column-gap: 20px;
   padding: 40px;
+}
+.masonry {
+  column-count: 5;
+}
+
+@media (max-width: 1200px) {
+  .masonry { column-count: 4; }
+}
+
+@media (max-width: 900px) {
+  .masonry { column-count: 3; }
+}
+
+@media (max-width: 600px) {
+  .masonry { column-count: 2; }
+}
+
+@media (max-width: 400px) {
+  .masonry { column-count: 1; }
 }
 
 .pin {
@@ -1390,10 +1408,11 @@ background-image: url(IMG2/42.png);  color: #fff;
     justify-content: center;
     font-size: 89px;
  }
-#PELUCHES{
-  display: flex;
-  justify-content: center;
-      gap: 18em
+#PELUCHES {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2em;
+  padding: 2em;
 }
 .pins,
 .grid,
@@ -1403,13 +1422,15 @@ background-image: url(IMG2/42.png);  color: #fff;
 
 
 /* MEDIA */
-.modal-content img,
-.modal-content video {
-  max-width: 100%;
-  max-height: 65vh;
+.carousel-item img,
+.carousel-item video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* o contain si no quieres recorte */
   object-fit: contain;
-  background: #000;
+background: black;
 }
+
 
 /* TEXTO */
 .modal-body {
@@ -1449,8 +1470,9 @@ background-image: url(IMG2/42.png);  color: #fff;
 .insta-carousel {
   padding: 4em 0;
   overflow: hidden;
-    width: 524px;
-    height: 906px;
+  width: 100%;
+  max-width: 524px;
+  height: auto;
   }
 
 .carousel-header {
@@ -1486,15 +1508,9 @@ background-image: url(IMG2/42.png);  color: #fff;
 
 /* ITEM */
 .carousel-item {
-    min-width: 507px;
-height: 678px;
-  flex-shrink: 0;
-  scroll-snap-align: center;
-
-  overflow: hidden;
-  border-radius: 16px;
-
-  transition: transform 0.4s ease, opacity 0.4s ease;
+  min-width: 300px;
+  height: auto; /* 🔥 clave */
+  aspect-ratio: 4/5; /* mantiene proporción sin cortar */
 }
 
 /* IMAGEN */
@@ -1668,4 +1684,83 @@ height: 678px;
   color: white;
   text-align: center;
   padding-top: 23vh;
+}
+@media (max-width: 768px) {
+
+  /* SIDEBAR -> se vuelve horizontal */
+  .sidebar {
+    position: fixed;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .menu {
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  /* QUITAR MARGEN DEL CONTENIDO */
+  section {
+    margin-left: 0 !important;
+    padding-top: 80px;
+  }
+
+  /* MASONRY RESPONSIVE */
+  .masonry {
+    column-count: 2;
+    column-gap: 10px;
+    padding: 10px;
+  }
+
+  /* IMÁGENES MÁS SUAVES */
+  .pin {
+    border-radius: 16px;
+  }
+
+  /* TEXTO */
+  .mask-text {
+    font-size: 40px;
+  }
+
+  .carruceles_01 {
+    font-size: 40px;
+  }
+
+  /* CARRUSEL FULL WIDTH */
+  .insta-carousel {
+    width: 100%;
+    height: auto;
+    padding: 2em 0;
+  }
+
+  .carousel-item {
+    min-width: 80%;
+    height: 400px;
+  }
+
+  /* BOTONES */
+  .carousel-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+  }
+}
+@media (max-width: 1024px) {
+
+  .masonry {
+    column-count: 3;
+  }
+
+  .insta-carousel {
+    width: 100%;
+  }
+
+  .carousel-item {
+    min-width: 60%;
+  }
+
 }
