@@ -252,7 +252,7 @@ nav {
 
 .typewriter::before {
   content: "";
-  animation: typing 13.5s infinite;
+  animation: typing 4s infinite;
 }
 
 .typewriter::after {
@@ -344,7 +344,7 @@ h2 {
 
 .grid-editorial {
   padding-bottom: 7em;
-  padding-inline: 12em;
+padding-inline: clamp(1em, 5vw, 8em);
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 60px;
@@ -414,9 +414,11 @@ h2 {
   display: flex;
 }
 .editorial-card div img {
-  height: 470px;
+  width: 100%;           /* Ocupa todo el ancho de su contenedor */
+  height: 490px;         /* Mantienes tu altura editorial */
   margin-bottom: 1em;
-  width: 80%;
+  object-fit: cover;     /* 👈 CLAVE: Recorta la imagen para que llene el espacio sin deformarse */
+  object-position: center; /* Centra el encuadre de la imagen */
   filter: grayscale(100%);
   transition: filter 0.4s ease, transform 0.4s ease;
 }
@@ -658,8 +660,8 @@ nav {
    ========================================================= */
 
 .about-editorial {
-  padding-inline: 14em;
-  grid-template-columns: 2fr 1fr;
+ padding-inline: clamp(1em, 5vw, 8em);
+   grid-template-columns: 2fr 1fr;
   align-items: start;
   padding-bottom: 7em;
   
@@ -989,6 +991,8 @@ nav {
 .pin video {
   width: 100%;
   display: block;
+      border-radius: 30px;
+
 }
 
 
@@ -1058,79 +1062,6 @@ nav {
   opacity: 0.05;
   color: #8b0000;
 }
-
-/* =========================================================
-   MOBILE · NAVEGACIÓN EDITORIAL
-   Solo SOBRE_MI + PROYECTOS
-   ========================================================= */
-
-@media (max-width: 768px) {
-
-  nav div {
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    padding-inline: 20px;
-    gap: 30px;
-  }
-  .editorial-divider {
-  padding: 1em 4em;
-  opacity: 0.6;
-}
-.NOMBRE{
-      min-height: 74vh;
-}
-.NOMBRE h1{
-    font-size: 150%;
-
-  font-size: 8vmin;
-}
-
-  .about-editorial {
-    grid-template-columns: 1fr;
-    padding-inline: 2em;
-  }
-  .imagenes{
-    grid-template-columns: repeat(2, 1fr);
-  }
-  #habilidades{
-    display: flex;
-    flex-direction: column;
-    padding-inline: 3em;
-  }
-  .editorial-header {
-    padding-inline: 3em;
-}
-.grid-editorial {
-    padding-inline: 3em;
-}
-.mask-text{
-  font-size: 150%;
-}
-.side-editorial {
-    left: -124px;
-}
-
-.about-header{
-    padding: 7em 2em 0em;
-
-}
-.VISTA-PREVIA{
-  min-height: 65vh;
-}
-.quote{
-    min-height: 40vh;
-
-}
-.section-title{
-  font-size: 50px;
-}
-#habilidades div{
-  padding-inline: 2em;
-}
-  }
-
-
 
         /* Skills */
         .skills-grid {
@@ -1284,6 +1215,9 @@ background-image: url(IMG2/42.png);  color: #fff;
   font-size: 1.2rem;
   letter-spacing: 0.2em;
   margin-bottom: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* MENU */
@@ -1508,9 +1442,9 @@ background: black;
 
 /* ITEM */
 .carousel-item {
-  min-width: 300px;
-  height: auto; /* 🔥 clave */
-  aspect-ratio: 4/5; /* mantiene proporción sin cortar */
+  min-width: 80%;   /* responsive 🔥 */
+  height: auto;
+  aspect-ratio: 4/5; /* mantiene proporción */
 }
 
 /* IMAGEN */
@@ -1643,8 +1577,6 @@ background: black;
 
 .fotografia_main{
   margin-inline: 4em;
-  margin-left: 300px;
-
 }
 .fotografia{
   display: flex;
@@ -1663,7 +1595,7 @@ background: black;
     width: 89%;
     height: 57vh;
     overflow: hidden;
-    margin-top: 7em;
+    margin-bottom: 5em;
 }
 
 .video-background video {
@@ -1685,82 +1617,58 @@ background: black;
   text-align: center;
   padding-top: 23vh;
 }
-@media (max-width: 768px) {
+/* =========================================================
+   CAPÍTULO XVII · RESPONSIVE / MEDIA QUERIES (OPTIMIZADO)
+   Adaptabilidad · Mobile editorial · Jerarquías
+   ========================================================= */
 
-  /* SIDEBAR -> se vuelve horizontal */
-  .sidebar {
-    position: fixed;
-    width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-  }
-
-  .menu {
-    flex-direction: row;
-    gap: 1rem;
-  }
-
-  /* QUITAR MARGEN DEL CONTENIDO */
-  section {
-    margin-left: 0 !important;
-    padding-top: 80px;
-  }
-
-  /* MASONRY RESPONSIVE */
-  .masonry {
-    column-count: 2;
-    column-gap: 10px;
-    padding: 10px;
-  }
-
-  /* IMÁGENES MÁS SUAVES */
-  .pin {
-    border-radius: 16px;
-  }
-
-  /* TEXTO */
-  .mask-text {
-    font-size: 40px;
-  }
-
-  .carruceles_01 {
-    font-size: 40px;
-  }
-
-  /* CARRUSEL FULL WIDTH */
-  .insta-carousel {
-    width: 100%;
-    height: auto;
-    padding: 2em 0;
-  }
-
-  .carousel-item {
-    min-width: 80%;
-    height: 400px;
-  }
-
-  /* BOTONES */
-  .carousel-btn {
-    width: 35px;
-    height: 35px;
-    font-size: 16px;
-  }
-}
 @media (max-width: 1024px) {
+  /* 🔹 AJUSTES PARA TABLETS Y PANTALLAS MEDIANAS */
+  .masonry { column-count: 3; }
+  .insta-carousel { width: 100%; }
+  .carousel-item { min-width: 60%; }
+  .grid-editorial { padding-inline: 4em; }
+  .about-editorial { padding-inline: 4em; }
+  .imagenes { grid-template-columns: repeat(3, 1fr); }
+  .skills-grid { grid-template-columns: repeat(2, 1fr); }
+}
 
-  .masonry {
-    column-count: 3;
-  }
 
-  .insta-carousel {
-    width: 100%;
-  }
 
-  .carousel-item {
-    min-width: 60%;
-  }
+@media (max-width: 768px) {
+  /* 🔹 NAVEGACIÓN Y SIDEBAR (MÓVILES) */
+  nav div { flex-direction: column; align-items: center; gap: 20px; padding: 1em; }
+  .sidebar { position: fixed; width: 100%; height: auto; display: flex; flex-direction: row; justify-content: space-between; align-items: center; padding: 1rem; }
+  .menu { flex-direction: row; gap: 1rem; }
+  .content { margin-left: 0; }
+  section { margin-left: 0 !important; padding-top: 80px; }
 
+  /* 🔹 HERO Y HEADERS */
+  .NOMBRE { min-height: 70vh; padding: 2em; }
+  .NOMBRE h1 { font-size: 10vw; text-align: center; }
+  .side-editorial { display: none; /* Limpieza visual en móvil */ }
+  .editorial-header, .about-header { padding: 3em 2em; text-align: center; }
+  .mask-text, .mask-text-SOBRE_MI { font-size: 12vw; }
+  .carruceles_01 { font-size: 40px; }
+
+  /* 🔹 SECCIÓN SOBRE MÍ Y HABILIDADES */
+  .about-editorial { grid-template-columns: 1fr; padding-inline: 2em; }
+  .about-meta { margin-top: 2em; border-top: 1px solid #000; padding-top: 2em; align-items: flex-start; }
+  .imagenes { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .quote { font-size: 12px; padding: 1em; }
+  #habilidades { flex-direction: column; padding-inline: 2em; }
+  .skills-grid { grid-template-columns: 1fr; }
+
+  /* 🔹 PROYECTOS Y MASONRY (FOTOGRAFÍAS) */
+  .grid-editorial { padding-inline: 2em; gap: 30px; }
+  .editorial-card div img { height: auto; /* Evita que se recorten feo */ }
+  .masonry { column-count: 2; column-gap: 10px; padding: 10px; }
+  .pin { border-radius: 16px; }
+
+  /* 🔹 CARRUSELES Y MULTIMEDIA */
+  .insta-carousel { width: 100%; height: auto; padding: 2em 0; }
+  .carousel-item { min-width: 80%; height: auto; }
+  .carousel-btn { width: 35px; height: 35px; font-size: 16px; }
+  .video-background { margin-left: 0; width: 100%; height: 40vh; }
+  .contenido { padding-top: 10vh; }
 }
