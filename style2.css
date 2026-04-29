@@ -361,6 +361,11 @@ padding-inline: clamp(1em, 5vw, 8em);
   color: black;
   text-decoration: none ;
 }
+.editorial-card {
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+}
 
 
 .editorial-card:hover {

@@ -228,3 +228,30 @@ document.querySelectorAll('.carousel-wrapper').forEach(wrapper => {
   });
 
 });
+// Validación antes de ejecutar para evitar errores en consola
+document.addEventListener("DOMContentLoaded", () => {
+    
+    // Modal con validación de existencia
+    const modal = document.getElementById("projectModal");
+    const cards = document.querySelectorAll(".editorial-card");
+    
+    if (modal && cards.length > 0) {
+        cards.forEach(card => {
+            card.addEventListener("click", () => {
+                const img = card.querySelector("img")?.src;
+                const title = card.querySelector("h2")?.innerText;
+                
+                if(img) document.getElementById("modalImg").src = img;
+                if(title) document.getElementById("modalTitle").innerText = title;
+                
+                modal.style.display = "flex";
+            });
+        });
+    }
+
+    // Lazy loading manual para videos si es necesario
+    const videos = document.querySelectorAll('video[autoplay]');
+    videos.forEach(video => {
+        video.setAttribute('loading', 'lazy');
+    });
+});
